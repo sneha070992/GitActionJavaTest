@@ -1,0 +1,14 @@
+name: Welcome message Workflow
+
+on: [push]
+
+jobs:
+  Job1-Message-Display:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "*************************"
+      - run: ls ${{ github.workspace }}
+      - name: Checking out Current Repository
+        uses: actions/checkout@v2
+      - run: ls ${{ github.workspace }}
+      - run: echo "*************************"

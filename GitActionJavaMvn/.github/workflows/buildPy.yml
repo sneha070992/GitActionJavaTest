@@ -1,0 +1,19 @@
+name: Welcome message Workflow
+
+on: [push]
+
+jobs:
+  Job1-Clone-Project:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checking out Current Repository
+        uses: actions/checkout@v2
+
+      - name: Configure Runner OS with Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      
+      - run: python buildingProject.py
+
+      - run: ls
